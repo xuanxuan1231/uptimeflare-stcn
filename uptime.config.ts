@@ -7,40 +7,49 @@ import { MaintenanceConfig, PageConfig, WorkerConfig } from './types/config'
 
 const pageConfig: PageConfig = {
   // Title for your status page
-  title: "lyc8503's Status Page",
+  title: "智教联盟 的服务状态",
   // Links shown at the header of your status page, could set `highlight` to `true`
   links: [
     { link: 'https://github.com/lyc8503', label: 'GitHub' },
     { link: 'https://blog.lyc8503.net/', label: 'Blog' },
     { link: 'mailto:me@lyc8503.net', label: 'Email Me', highlight: true },
   ],
+  group: {
+    '智教联盟': ['stcn', 'stcn_forum', 'stcn_cnel'],
+    'ClassIsland': ['stcn_ci_homepage', 'stcn_ci_docs', 'stcn_ci_distribution']
 }
 
 const workerConfig: WorkerConfig = {
   // Define all your monitors here
   monitors: [
-    // Example HTTP Monitor
+    {
+      id: 'stcn',
+      name: '主页',
+      method: 'GET',
+      target: 'https://smart-teach.cn',
+      statusPageLink: 'https://smart-teach.cn',
+    },
     {
       // `id` should be unique, history will be kept if the `id` remains constant
-      id: 'foo_monitor',
+      id: 'stcn_forum',
       // `name` is used at status page and callback message
-      name: 'My API Monitor',
+      name: '论坛',
       // `method` should be a valid HTTP Method
       method: 'GET',
       // `target` is a valid URL
-      target: 'https://example.com',
+      target: 'https://forum.smart-teach.cn',
       // [OPTIONAL] `tooltip` is ONLY used at status page to show a tooltip
-      tooltip: 'This is a tooltip for this monitor',
+      //tooltip: '',
       // [OPTIONAL] `statusPageLink` is ONLY used for clickable link at status page
-      statusPageLink: 'https://example.com',
+      statusPageLink: 'https://forum.smart-teach.cn',
       // [OPTIONAL] `expectedCodes` is an array of acceptable HTTP response codes, if not specified, default to 2xx
-      expectedCodes: [200],
+      //expectedCodes: [200],
       // [OPTIONAL] `timeout` in millisecond, if not specified, default to 10000
-      timeout: 10000,
+      //timeout: 10000,
       // [OPTIONAL] headers to be sent
       headers: {
         'User-Agent': 'Uptimeflare',
-        Authorization: 'Bearer YOUR_TOKEN_HERE',
+        //Authorization: 'Bearer YOUR_TOKEN_HERE',
       },
       // [OPTIONAL] body to be sent (require POST/PUT/PATCH method)
       // body: 'Hello, world!',
@@ -55,8 +64,42 @@ const workerConfig: WorkerConfig = {
       // [OPTIONAL] if true, the check will fallback to local if the specified proxy is down
       // checkProxyFallback: true,
     },
-    // Example TCP Monitor
     {
+      id: 'stcn_cnel',
+      name: 'CNEL',
+      method: 'GET',
+      target: 'https://cnel.smart-teach.cn',
+      tooltip: 'CNEL 电教委员指南',
+      statusPageLink: 'https://cnel.smart-teach.cn',
+      headers: {
+        'User-Agent': 'Uptimeflare',
+      }
+    },
+    {
+      id: 'stcn_ci_homepage',
+      name: '主页',
+      method: 'GET',
+      target: 'https://classisland.tech',
+      tooltip: 'ClassIsland 主页',
+      statusPageLink: 'https://classisland.tech',
+    },
+    {
+      id: 'stcn_ci_docs',
+      name: '文档',
+      method: 'GET',
+      target: 'https://docs.classisland.tech',
+      tooltip: 'ClassIsland 文档',
+      statusPageLink: 'https://docs.classisland.tech'
+    },
+    {
+      id: 'stcn_ci_distribution',
+      name: '分发服务',
+      method: 'GET',
+      target: 'https://distribution.classisland.tech',
+      tooltip: 'ClassIsland 分发服务',
+    },
+    // Example TCP Monitor
+    /*{
       id: 'test_tcp_monitor',
       name: 'Example TCP Monitor',
       // `method` should be `TCP_PING` for tcp monitors
@@ -66,7 +109,7 @@ const workerConfig: WorkerConfig = {
       tooltip: 'My production server SSH',
       statusPageLink: 'https://example.com',
       timeout: 5000,
-    },
+    },*/
   ],
   // [Optional] Notification settings
   notification: {
@@ -115,18 +158,18 @@ const workerConfig: WorkerConfig = {
 const maintenances: MaintenanceConfig[] = [
   {
     // [Optional] Monitor IDs to be affected by this maintenance
-    monitors: ['foo_monitor', 'bar_monitor'],
+    //monitors: ['foo_monitor', 'bar_monitor'],
     // [Optional] default to "Scheduled Maintenance" if not specified
-    title: 'Test Maintenance',
+    title: '智教联盟服务中断',
     // Description of the maintenance, will be shown at status page
-    body: 'This is a test maintenance, server software upgrade',
+    body: '由于一些已知问题，智教联盟部分服务仍然处于异常状态。\n我们仍在积极处理。',
     // Start time of the maintenance, in UNIX timestamp or ISO 8601 format
-    start: '2020-01-01T00:00:00+08:00',
+    start: '2026-05-1T08:00:00+08:00',
     // [Optional] end time of the maintenance, in UNIX timestamp or ISO 8601 format
     // if not specified, the maintenance will be considered as on-going
-    end: '2050-01-01T00:00:00+08:00',
+    //end: '2050-01-01T00:00:00+08:00',
     // [Optional] color of the maintenance alert at status page, default to "yellow"
-    color: 'blue',
+    color: 'red',
   },
 ]
 
