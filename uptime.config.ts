@@ -166,7 +166,7 @@ const workerConfig: WorkerConfig = {
 const maintenances: MaintenanceConfig[] = [
   {
     // [Optional] Monitor IDs to be affected by this maintenance
-    monitors: ['stcn', 'stcn_forum', 'stcn_cnel'],
+    monitors: ['stcn', 'stcn_forum', 'stcn_static', 'stcn_cnel'],
     // [Optional] default to "Scheduled Maintenance" if not specified
     title: '智教联盟服务中断',
     // Description of the maintenance, will be shown at status page
