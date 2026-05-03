@@ -15,7 +15,7 @@ const pageConfig: PageConfig = {
     { link: 'mailto:me@lyc8503.net', label: 'Email Me', highlight: true },
   ],
   group: {
-    '智教联盟': ['stcn', 'stcn_forum', 'stcn_cnel'],
+    '智教联盟': ['stcn', 'stcn_forum', 'stcn_static', 'stcn_cnel'],
     'ClassIsland': ['stcn_ci_homepage', 'stcn_ci_docs', 'stcn_ci_distribution']
   }
 }
@@ -64,6 +64,13 @@ const workerConfig: WorkerConfig = {
       // checkProxy: 'worker://weur',
       // [OPTIONAL] if true, the check will fallback to local if the specified proxy is down
       // checkProxyFallback: true,
+    },
+    {
+      id: 'stcn_static',
+      name: '静态资源',
+      method: 'GET',
+      target: 'https://static.smart-teach.cn',
+      tooltip: 'STCN 静态资源'
     },
     {
       id: 'stcn_cnel',
