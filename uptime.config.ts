@@ -10,9 +10,9 @@ const pageConfig: PageConfig = {
   title: "智教联盟 的服务状态",
   // Links shown at the header of your status page, could set `highlight` to `true`
   links: [
-    { link: 'https://github.com/lyc8503', label: 'GitHub' },
-    { link: 'https://blog.lyc8503.net/', label: 'Blog' },
-    { link: 'mailto:me@lyc8503.net', label: 'Email Me', highlight: true },
+    { link: 'https://github.com/SmartTeachCN', label: 'GitHub' },
+    { link: 'https://qun.qq.com/universal-share/share?busi_data=eyJncm91cENvZGUiOiIxMDMyMzg5MjIyIiwidG9rZW4iOiJKaG0rTC85NFZxbENqc1lHaThsQkFoZHkyODBFemMzTjR2d3N2UGZTZUl2K2l0dnVWVnF4TDIzWUFUcXJhdTQyIiwidWluIjoiMTc2MzUxNjkyNiJ9&data=6Xk_xft95-WTpEJSODqQMuBV3oRVydceBcMSWIHWA2BlcAThhSJ4x9cRgInWacpREYFURXtzYjTNQDd66papnA&svctype=4&tempid=h5_group_info', label: 'QQ' },
+    { link: 'mailto:helloswx@smart-teach.cn', label: '电邮', highlight: true },
   ],
   group: {
     '智教联盟': ['stcn', 'stcn_forum', 'stcn_static', 'stcn_cnel'],
