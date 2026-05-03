@@ -17,6 +17,7 @@ const pageConfig: PageConfig = {
   group: {
     '智教联盟': ['stcn', 'stcn_forum', 'stcn_cnel'],
     'ClassIsland': ['stcn_ci_homepage', 'stcn_ci_docs', 'stcn_ci_distribution']
+  }
 }
 
 const workerConfig: WorkerConfig = {
