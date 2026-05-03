@@ -159,13 +159,13 @@ const workerConfig: WorkerConfig = {
 const maintenances: MaintenanceConfig[] = [
   {
     // [Optional] Monitor IDs to be affected by this maintenance
-    //monitors: ['foo_monitor', 'bar_monitor'],
+    monitors: ['stcn', 'stcn_forum', 'stcn_cnel'],
     // [Optional] default to "Scheduled Maintenance" if not specified
     title: '智教联盟服务中断',
     // Description of the maintenance, will be shown at status page
     body: '由于一些已知问题，智教联盟部分服务仍然处于异常状态。\n我们仍在积极处理。',
     // Start time of the maintenance, in UNIX timestamp or ISO 8601 format
-    start: '2026-05-1T08:00:00+08:00',
+    start: '2026-05-01T08:00:00+08:00',
     // [Optional] end time of the maintenance, in UNIX timestamp or ISO 8601 format
     // if not specified, the maintenance will be considered as on-going
     //end: '2050-01-01T00:00:00+08:00',
