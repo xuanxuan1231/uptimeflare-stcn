@@ -73,6 +73,14 @@ const workerConfig: WorkerConfig = {
       tooltip: 'STCN 静态资源'
     },
     {
+      id: 'stcn_account',
+      name: '账户',
+      method: 'GET',
+      target: 'https://auth.smart-teach.cn',
+      tooltip: 'Casdoor 账户服务',
+      expectedCodes: [2xx, 3xx]
+    },
+    {
       id: 'stcn_cnel',
       name: 'CNEL',
       method: 'GET',
