@@ -64,13 +64,17 @@ const workerConfig: WorkerConfig = {
       // checkProxy: 'worker://weur',
       // [OPTIONAL] if true, the check will fallback to local if the specified proxy is down
       // checkProxyFallback: true,
+      checkProxy: 'globalping://ifkii3vvqe6s5tz3ns3tmoywipnt5qfu/?magic=CN',
+      checkProxyFallback: true,
     },
     {
       id: 'stcn_static',
       name: '静态资源',
       method: 'GET',
       target: 'https://static.smart-teach.cn',
-      tooltip: 'STCN 静态资源'
+      tooltip: 'STCN 静态资源',
+      checkProxy: 'globalping://ifkii3vvqe6s5tz3ns3tmoywipnt5qfu/?magic=CN',
+      checkProxyFallback: true,
     },
     {
       id: 'stcn_account',
@@ -78,7 +82,9 @@ const workerConfig: WorkerConfig = {
       method: 'GET',
       target: 'https://auth.smart-teach.cn',
       tooltip: 'Casdoor 账户服务',
-      expectedCodes: [2xx, 3xx]
+      expectedCodes: ['2xx', '3xx'],
+      checkProxy: 'globalping://ifkii3vvqe6s5tz3ns3tmoywipnt5qfu/?magic=CN',
+      checkProxyFallback: true,
     },
     {
       id: 'stcn_cnel',
@@ -89,7 +95,9 @@ const workerConfig: WorkerConfig = {
       statusPageLink: 'https://cnel.smart-teach.cn',
       headers: {
         'User-Agent': 'Uptimeflare',
-      }
+      },
+      checkProxy: 'globalping://ifkii3vvqe6s5tz3ns3tmoywipnt5qfu/?magic=CN',
+      checkProxyFallback: true,
     },
     {
       id: 'stcn_ci_homepage',
@@ -105,7 +113,7 @@ const workerConfig: WorkerConfig = {
       method: 'GET',
       target: 'https://docs.classisland.tech',
       tooltip: 'ClassIsland 文档',
-      statusPageLink: 'https://docs.classisland.tech'
+      statusPageLink: 'https://docs.classisland.tech',
     },
     {
       id: 'stcn_ci_distribution',
