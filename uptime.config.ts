@@ -82,7 +82,6 @@ const workerConfig: WorkerConfig = {
       method: 'GET',
       target: 'https://auth.smart-teach.cn',
       tooltip: 'Casdoor 账户服务',
-      expectedCodes: ['2xx', '3xx'],
       checkProxy: 'globalping://ifkii3vvqe6s5tz3ns3tmoywipnt5qfu/?magic=CN',
       checkProxyFallback: true,
     },
