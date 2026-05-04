@@ -15,7 +15,7 @@ const pageConfig: PageConfig = {
     { link: 'mailto:helloswx@smart-teach.cn', label: '电邮', highlight: true },
   ],
   group: {
-    '智教联盟': ['stcn', 'stcn_forum', 'stcn_static', 'stcn_cnel'],
+    '智教联盟': ['stcn', 'stcn_forum', 'stcn_account', 'stcn_static', 'stcn_cnel'],
     'ClassIsland': ['stcn_ci_homepage', 'stcn_ci_docs', 'stcn_ci_distribution']
   }
 }
@@ -181,7 +181,7 @@ const workerConfig: WorkerConfig = {
 const maintenances: MaintenanceConfig[] = [
   {
     // [Optional] Monitor IDs to be affected by this maintenance
-    monitors: ['stcn', 'stcn_forum', 'stcn_static', 'stcn_cnel'],
+    monitors: ['stcn', 'stcn_forum', 'stcn_account', 'stcn_static', 'stcn_cnel'],
     // [Optional] default to "Scheduled Maintenance" if not specified
     title: '智教联盟服务中断',
     // Description of the maintenance, will be shown at status page
