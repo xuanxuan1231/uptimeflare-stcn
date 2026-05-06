@@ -69,7 +69,7 @@ const workerConfig: WorkerConfig = {
       id: 'stcn_static',
       name: '静态资源',
       method: 'GET',
-      target: 'https://static.smart-teach.cn',
+      target: 'https://static.smart-teach.cn/logos/full.jpg',
       tooltip: 'STCN 静态资源',
     },
     {
